@@ -12,10 +12,9 @@ const app = express();
 passport.use(
   new GoogleStrategy(
     {
-      clientID:
-        '856342158307-uvos1vlrh62c2642n0s67c3ifl6svlcb.apps.googleusercontent.com',
-      clientSecret: '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',
-      callbackURL: 'http://localhost:8000/auth/google/callback',
+      clientID: process.env.clientID,
+      clientSecret: process.env.clientSecret,
+      callbackURL: process.env.callbackURL,
     },
     (accessToken, refreshToken, profile, done) => {
       done(null, profile);
